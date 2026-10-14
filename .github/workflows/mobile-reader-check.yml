@@ -43,3 +43,5 @@ jobs:
         with:
           name: mobile-reader-checks
           path: reader-checks/
+
+# Verify the complete 188-lesson phone edition.
