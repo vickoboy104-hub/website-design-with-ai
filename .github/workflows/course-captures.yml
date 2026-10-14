@@ -1,0 +1,50 @@
+name: Capture course example outputs
+on:
+  push:
+    paths:
+      - '.github/workflows/course-captures.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare examples and browser
+        run: |
+          unzip -q downloads/Website_Design_Practice_Files.zip -d examples
+          npm install playwright
+          npx playwright install --with-deps chromium
+          php -v
+          php -m | grep pdo_sqlite
+      - name: Run original examples and take screenshots
+        shell: bash
+        run: |
+          mkdir -p captures
+          cat > capture.cjs <<'JS'
+          const {chromium}=require('playwright');
+          const {spawn,execFileSync}=require('child_process');
+          const fs=require('fs'),path=require('path');
+          (async()=>{
+          const root=path.resolve('examples/Website_Design_Practice_Files');
+          const servers=[];
+          function serve(dir,port){servers.push(spawn('php',['-S','127.0.0.1:'+port,'-t',dir],{stdio:'ignore'}));}
+          serve(root,8000);
+          for(let i=1;i<=5;i++){execFileSync('php',['setup.php'],{cwd:path.join(root,'website-'+i)});serve(path.join(root,'website-'+i,'public'),8100+i);}
+          const b=await chromium.launch();const page=await b.newPage({viewport:{width:1100,height:800}});
+          const manifest=[];
+          async function shot(name,url){await page.goto(url);await page.screenshot({path:'captures/'+name+'.png',fullPage:true});manifest.push({name,url,title:await page.title()});}
+          for(const type of ['html','css','javascript','php'])for(let i=1;i<=5;i++)await shot(type+'-'+i,'http://127.0.0.1:8000/'+type+'-'+i+'/index.'+(type==='php'?'php':'html'));
+          for(let i=1;i<=5;i++)for(const name of ['index','catalog','request'])await shot('website-'+i+'-'+name,'http://127.0.0.1:'+(8100+i)+'/'+name+'.php');
+          await shot('ai-bakery','http://127.0.0.1:8000/ai-bakery/index.html');
+          fs.writeFileSync('captures/manifest.json',JSON.stringify(manifest,null,2));
+          await b.close();for(const s of servers)s.kill();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+          node capture.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: course-real-outputs
+          path: captures/
