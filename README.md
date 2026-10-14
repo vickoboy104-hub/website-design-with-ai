@@ -9,6 +9,7 @@ Start with computer basics and learn to build websites one practical at a time. 
 
 | What you need | Download |
 |---|---|
+| Read on your phone with adjustable text and Copy code | [Download the mobile HTML reader](downloads/Website_Design_Mobile_Reader.html?raw=true) |
 | Read the complete course | [Download the PDF](downloads/Practical_Website_Design_with_AI.pdf?raw=true) |
 | Edit or print your own copy | [Download the Word handout](downloads/Practical_Website_Design_with_AI.docx?raw=true) |
 | Get the practice projects | [Download the practice ZIP](downloads/Website_Design_Practice_Files.zip?raw=true) |
@@ -17,11 +18,11 @@ If GitHub opens a file preview, choose **Download raw file**. You do not need a 
 
 ## Start here
 
-1. Download the PDF and the practice ZIP above.
+1. Download the mobile HTML reader or PDF, plus the practice ZIP above. Open the HTML file in a full browser; a phone’s file preview may not run its controls. Use the PDF if your phone cannot open local HTML.
 2. Read **Welcome to your first website** and **Download your course files** in the book.
 3. Right-click the ZIP in Windows → **Extract All**. Open the extracted folder.
 4. Open **START_HERE.html** for a clickable exercise index. Copy an exercise to your own **My Practice** folder before editing it.
-5. Start at Part 01. Use the clickable contents, Previous, Next and Downloads links to move through the course.
+5. Start at Part 01. In the reader, use the menu, lesson search, Back/Next, Aa text controls and completion buttons. In the PDF, use the clickable contents and footer Contents link.
 
 ## What you will practise
 
@@ -58,6 +59,10 @@ This short profile is based on the author's supplied CVs, teaching application a
 
 Examples use fictional names and sample prices. The complete websites record local enquiries; they do not take payments, confirm admissions, allocate rooms or issue tickets. Public deployment requires further work and review.
 
-The documents and navigation links were checked after rendering. JavaScript behaviour checks and SQL exercises were executed. PHP could not be executed in the document-building environment, so every PHP project includes checks to run on your own setup.
+The phone edition uses 19-point explanations in a narrow PDF, with the original 9.5-point code size preserved. The HTML reader has adjustable explanations, 96 copy boxes, searchable contents, optional dark mode and progress saved on the current device. Its 188 lessons include 13 new lessons on Paul’s AI-to-GitHub-to-server workflow.
+
+All 25 foundation practicals were run: SQL in SQLite, and HTML/CSS/JavaScript/PHP using Chromium and PHP in GitHub Actions. The five complete websites were started and their home, catalogue, request and saved-result pages captured. The handout includes 46 real browser captures and selected privacy-safe interface crops supplied by Paul. The original 104 practice code files are unchanged. These checks do not constitute a production security audit.
+
+The AI workflow covers optional ChatGPT planning, Codex and Kilo in VS Code, Cline, Claude Code, Qoder, local testing, GitHub Desktop, reviewed agent pushes and Laravel server deployment. Google’s consumer Gemini Code Assist migration is explained. Free access and credits depend on current accounts and providers. No deployment to a personal or business server was performed.
 
 Self-paced edition · October 2026. Tool menus and account plans can change; official reference links are included in the handout.
