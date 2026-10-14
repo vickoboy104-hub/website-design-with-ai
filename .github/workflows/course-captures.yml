@@ -34,11 +34,33 @@ jobs:
           serve(root,8000);
           for(let i=1;i<=5;i++){execFileSync('php',['setup.php'],{cwd:path.join(root,'website-'+i)});serve(path.join(root,'website-'+i,'public'),8100+i);}
           const b=await chromium.launch();const page=await b.newPage({viewport:{width:1100,height:800}});
-          const manifest=[];
+          const manifest=[]; await page.setViewportSize({width:390,height:700});
           async function shot(name,url){await page.goto(url);await page.screenshot({path:'captures/'+name+'.png',fullPage:true});manifest.push({name,url,title:await page.title()});}
           for(const type of ['html','css','javascript','php'])for(let i=1;i<=5;i++)await shot(type+'-'+i,'http://127.0.0.1:8000/'+type+'-'+i+'/index.'+(type==='php'?'php':'html'));
           for(let i=1;i<=5;i++)for(const name of ['index','catalog','request'])await shot('website-'+i+'-'+name,'http://127.0.0.1:'+(8100+i)+'/'+name+'.php');
           await shot('ai-bakery','http://127.0.0.1:8000/ai-bakery/index.html');
+          
+          const tasks=[
+          ['javascript-1','#name','Ada','#greet'],
+          ['javascript-2','#quantity','10','#calculate'],
+          ['javascript-4',null,null,'#toggle'],
+          ['javascript-5','#search','bag',null],
+          ['php-4','#qty','2','button']
+          ];
+          for(const [name,input,value,button] of tasks){
+            await page.goto('http://127.0.0.1:8000/'+name+'/index.'+(name.startsWith('php')?'php':'html'));
+            if(input)await page.locator(input).fill(value);
+            if(button)await page.locator(button).click();
+            await page.screenshot({path:'captures/'+name+'-result.png',fullPage:true});
+          }
+          for(let i=1;i<=5;i++){
+            await page.goto('http://127.0.0.1:'+(8100+i)+'/request.php');
+            await page.locator('#customer').fill('Ada');
+            await page.locator('#quantity').fill(i===2?'10':'2');
+            await page.locator('button[type=submit]').click();
+            await page.waitForURL('**/thanks.php');
+            await page.screenshot({path:'captures/website-'+i+'-thanks.png',fullPage:true});
+          }
           fs.writeFileSync('captures/manifest.json',JSON.stringify(manifest,null,2));
           await b.close();for(const s of servers)s.kill();
           })().catch(e=>{console.error(e);process.exit(1)});
