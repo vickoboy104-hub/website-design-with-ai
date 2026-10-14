@@ -56,9 +56,9 @@ jobs:
           for(let i=1;i<=5;i++){
             await page.goto('http://127.0.0.1:'+(8100+i)+'/request.php');
             await page.locator('#customer').fill('Ada');
-            await page.locator('#quantity').fill(i===2?'10':'2');
+            await page.locator('#quantity').fill(i===2?'10':i===3?'1':'2');
             await page.locator('button[type=submit]').click();
-            await page.waitForURL('**/thanks.php');
+            await page.waitForURL('**/thanks.php'); console.log('Saved request website '+i);
             await page.screenshot({path:'captures/website-'+i+'-thanks.png',fullPage:true});
           }
           fs.writeFileSync('captures/manifest.json',JSON.stringify(manifest,null,2));
