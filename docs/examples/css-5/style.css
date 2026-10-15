@@ -1,0 +1,12 @@
+:root { --brand: #164e9b; }
+* { box-sizing: border-box; }
+body { font-family: Arial; padding: 24px; }
+form { max-width: 480px; }
+label { display: block; margin-top: 16px; }
+input, textarea { width: 100%; padding: 12px; font: inherit; }
+button {
+  margin-top: 16px; padding: 12px 18px;
+  color: white; background: var(--brand); border: 0;
+}
+input:focus-visible, textarea:focus-visible,
+button:focus-visible { outline: 3px solid #9c5c00; }

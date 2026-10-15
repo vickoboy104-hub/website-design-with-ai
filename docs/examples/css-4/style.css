@@ -1,0 +1,6 @@
+body { font-family: Arial; padding: 24px; }
+.courses { display: grid; gap: 16px; }
+article { padding: 20px; background: #eef5fb; }
+@media (min-width: 700px) {
+  .courses { grid-template-columns: repeat(3, 1fr); }
+}

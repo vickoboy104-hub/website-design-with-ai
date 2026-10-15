@@ -1,0 +1,6 @@
+body { font-family: Arial; padding: 24px; }
+.bar, nav { display: flex; gap: 16px; flex-wrap: wrap; }
+.bar { justify-content: space-between; align-items: center; }
+a { color: #164e9b; padding: 8px; }
+a:hover { background: #eef5fb; }
+a:focus-visible { outline: 3px solid #164e9b; }
