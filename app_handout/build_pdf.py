@@ -251,7 +251,7 @@ def footer(active):
  for label,px,target in [('‹',W-X-142,max(0,i-1)),('›',W-X-26,min(len(pages)-1,i+1))]:
   txt(label,px+7,y+1,17,BLUE,'Bold');C.linkAbsolute(label,'p'+str(target),(px,H-y-24,px+25,H-y),thickness=0)
  txt(f'{i+1} / {len(pages)}',W-X-107,y+6,9,MUTED)
-def brand():symbol('code',X,17,BLUE);txt('Beloved Technology',X+37,16,13,BLUE,'Bold');txt('WEBSITE DESIGN WITH AI',X+37,34,8,MUTED)
+def brand():C.drawImage(str(ROOT/'assets/btech-logo.png'),X,H-44,width=28,height=28,mask='auto');txt('Beloved Technology',X+37,16,13,BLUE,'Bold');txt('WEBSITE DESIGN WITH AI',X+37,34,8,MUTED)
 def hero_laptop(x,y):
  gradient(x,y,116,84,'#346BF8','#7442F1',10);rect(x+7,y+7,102,66,'#182642',6)
  for j,w in enumerate([42,69,52,73]):rect(x+17,y+20+j*10,w,3,['#80DCEA','#BAA1FF','#95E5BD','#7CA8F8'][j],1)
