@@ -5,6 +5,16 @@
 
 Start with computer basics and learn to build websites one practical at a time. No previous computer experience is required. The handout uses colourful diagrams, clickable navigation, short explanations, practice tasks and checks you can complete yourself.
 
+## Mobile app-style edition
+
+The PDF now has a 9:16 layout, a dashboard, four navigation tabs, selectable dark code panels and matching online-code links. Repeated notes were consolidated; practical code and real outputs are retained.
+
+**Website activation pending:** the Code Lab is prepared and browser-tested, but GitHub Pages must be enabled once by the repository owner: Settings → Pages → Source → GitHub Actions. Then run Actions → Publish learning website → Run workflow.
+
+After activation: [Open the Code Lab](https://vickoboy104-hub.github.io/website-design-with-ai/). It includes 16 live HTML/CSS/JavaScript examples, 26 complete projects for copying, and all 96 handout snippets. PHP needs a separate server.
+
+[Download the editable PDF design/source](downloads/Website_Design_Editable_Source.zip?raw=true).
+
 ## Downloads
 
 | What you need | Download |
@@ -22,7 +32,7 @@ If GitHub opens a file preview, choose **Download raw file**. You do not need a 
 2. Read **Welcome to your first website** and **Download your course files** in the book.
 3. Right-click the ZIP in Windows → **Extract All**. Open the extracted folder.
 4. Open **START_HERE.html** for a clickable exercise index. Copy an exercise to your own **My Practice** folder before editing it.
-5. Start at Part 01. In the reader, use the menu, lesson search, Back/Next, Aa text controls and completion buttons. In the PDF, use the clickable contents and footer Contents link.
+5. Start at Part 01. In the reader, use the menu, lesson search, Back/Next, Aa text controls and completion buttons. In the PDF, use Home, Lessons, Code and Resources at the bottom.
 
 ## What you will practise
 
@@ -59,7 +69,7 @@ This short profile is based on the author's supplied CVs, teaching application a
 
 Examples use fictional names and sample prices. The complete websites record local enquiries; they do not take payments, confirm admissions, allocate rooms or issue tickets. Public deployment requires further work and review.
 
-The phone edition uses 19-point explanations in a narrow PDF, with the original 9.5-point code size preserved. The HTML reader has adjustable explanations, 96 copy boxes, searchable contents, optional dark mode and progress saved on the current device. Its 188 lessons include 13 new lessons on Paul’s AI-to-GitHub-to-server workflow.
+The redesigned PDF uses 17–18-point explanations and the original 9.5-point code size. Its 160 consolidated lessons keep the original course coverage. The Word document and standalone HTML reader remain the earlier editions. The HTML reader has adjustable explanations, 96 copy boxes, searchable contents, optional dark mode and progress saved on the current device. Its 188 lessons include 13 new lessons on Paul’s AI-to-GitHub-to-server workflow.
 
 All 25 foundation practicals were run: SQL in SQLite, and HTML/CSS/JavaScript/PHP using Chromium and PHP in GitHub Actions. The five complete websites were started and their home, catalogue, request and saved-result pages captured. The handout includes 46 real browser captures and selected privacy-safe interface crops supplied by Paul. The original 104 practice code files are unchanged. These checks do not constitute a production security audit.
 
