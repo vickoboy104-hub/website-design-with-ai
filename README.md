@@ -9,9 +9,7 @@ Start with computer basics and learn to build websites one practical at a time. 
 
 The PDF now has a 9:16 layout, a dashboard, four navigation tabs, selectable dark code panels and matching online-code links. Repeated notes were consolidated; practical code and real outputs are retained.
 
-**Website activation pending:** the Code Lab is prepared and browser-tested, but GitHub Pages must be enabled once by the repository owner: Settings → Pages → Source → GitHub Actions. Then run Actions → Publish learning website → Run workflow.
-
-After activation: [Open the Code Lab](https://vickoboy104-hub.github.io/website-design-with-ai/). It includes 16 live HTML/CSS/JavaScript examples, 26 complete projects for copying, and all 96 handout snippets. PHP needs a separate server.
+**The Code Lab is live.** [Open the Code Lab](https://vickoboy104-hub.github.io/website-design-with-ai/). It includes 16 live HTML/CSS/JavaScript examples, 26 complete projects for copying, and all 96 handout snippets. PHP needs a separate server.
 
 [Download the editable PDF design/source](downloads/Website_Design_Editable_Source.zip?raw=true).
 
